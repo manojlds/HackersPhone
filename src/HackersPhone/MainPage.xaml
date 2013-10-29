@@ -13,6 +13,15 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="NewsItemDataTemplate">
+            <StackPanel Margin="0,0,0,17">
+                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                <TextBlock Text="{Binding Link}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+            </StackPanel>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -41,30 +50,14 @@
             <!--Pivot item one-->
             <phone:PivotItem Header="{Binding FrontPage.Title}">
                 <!--Double line list with text wrapping-->
-                <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding FrontPage.Items}">
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,0,0,17">
-                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding Link}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
+                <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding FrontPage.Items}" ItemTemplate="{StaticResource NewsItemDataTemplate}" />
             </phone:PivotItem>
 
             <!--Pivot item two-->
             <phone:PivotItem Header="{Binding New.Title}">
                 <!--Double line list no text wrapping-->
-                <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding New.Items}">
-                    <phone:LongListSelector.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="0,0,0,17">
-                                    <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding Link}" TextWrapping="NoWrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
+                <phone:LongListSelector Margin="0,0,-12,0" ItemsSource="{Binding New.Items}" ItemTemplate="{StaticResource NewsItemDataTemplate}">
+                    
                 </phone:LongListSelector>
             </phone:PivotItem>
         </phone:Pivot>
