@@ -1,0 +1,26 @@
+﻿<vm:NewsModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:HackersPhone.ViewModels">
+
+    <vm:NewsModel.FrontPage>
+        <vm:NewsPage Title="Front Page">
+            <vm:NewsPage.Items>
+                <vm:NewsItem Title="Test 1" Link="http://google.com" />
+                <vm:NewsItem Title="Test 2" Link="http://google.com" />
+                <vm:NewsItem Title="Test 3" Link="http://google.com" />
+            </vm:NewsPage.Items>
+        </vm:NewsPage>
+    </vm:NewsModel.FrontPage>
+    
+    <vm:NewsModel.New>
+        <vm:NewsPage Title="New">
+            <vm:NewsPage.Items>
+                <vm:NewsItem Title="Test New 1" Link="http://google.com" />
+                <vm:NewsItem Title="Test New 2" Link="http://google.com" />
+                <vm:NewsItem Title="Test New 3" Link="http://google.com" />
+            </vm:NewsPage.Items>
+        </vm:NewsPage>
+    </vm:NewsModel.New>
+
+</vm:NewsModel>
