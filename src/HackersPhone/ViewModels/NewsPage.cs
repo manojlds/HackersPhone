@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace HackersPhone.ViewModels
 {
     public class NewsPage
     {
-        private List<NewsItem> _items = new List<NewsItem>();
-
-        public List<NewsItem> Items
+        private ObservableCollection<NewsItem> _items = new ObservableCollection<NewsItem>();
+        public ObservableCollection<NewsItem> Items
         {
             get { return _items; }
             set { _items = value; }
         }
-
         public string Title { get; set; }
     }
 }

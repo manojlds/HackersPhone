@@ -17,7 +17,15 @@ namespace HackersPhone
 
         public static NewsModel ViewModel
         {
-            get { return viewModel ?? (viewModel = new NewsModel()); }
+            get
+            {
+                if (viewModel == null)
+                {
+                    viewModel = new NewsModel();
+                    viewModel.LoadData();
+                }
+                return viewModel;
+            }
         }
 
         /// <summary>
