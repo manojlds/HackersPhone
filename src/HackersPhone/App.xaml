@@ -8,6 +8,7 @@
     <!--Application Resources-->
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:HackersPhone" x:Key="LocalizedStrings"/>
+        <FontFamily x:Key="FontAwesome">/HackersPhone;component/Resources/FontAwesome.otf#FontAwesome</FontFamily>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
